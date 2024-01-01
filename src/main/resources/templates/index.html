@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>index 화면</p>
+    <button onclick="fetchData()">버튼</button>
+
+<script>
+function fetchData() {
+    alert('실행');
+    // Fetch API를 사용하여 데이터를 가져오는 부분
+    fetch('http://localhost:8080/v1/api/board')
+    .then(response => response.json())  // 응답을 JSON으로 변환
+    .then(data => {
+        console.log(data)
+    })
+    .catch(error => {
+        // 오류 처리
+        console.error('Error fetching data:', error);
+    });
+}
+</script>
+</body>
+</html>
+
